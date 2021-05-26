@@ -1,13 +1,15 @@
-const { MessageButton } = require('discord-buttons');
+const Discord = require('discord.js');
 const fetch = require('node-fetch');
-module.exports = {
-    name: "button",
-    category: "buttons",
-    description: "button",
-    permission: ['SEND_MESSAGE', 'EMBED_LINKS'],
-    usage: '.button',
-    dev: false,
-    run: async (bot, message, args) => {
+const bot = new Discord.Client();
+bot.prefix = ".";
+bot.token = token;
+bot.on('ready', ()=>{
+    bot.user.setActivity("stuff");
+    console.on('online');
+});
+bot.on('message', async(msg)=>{
+    if (message.author.bot) return;
+    if (msg.content.toLowerCase() != '.batan') return;
         fetch(`https://discord.com/api/v9/channels/${message.channel.id}/messages`, {
         method: "POST",
         body: JSON.stringify({"content":"batan",
@@ -16,9 +18,13 @@ module.exports = {
                 "components": [
                     {
                         "type": 2,
-                        "label": "Click me!",
+                        "label": "batan",
                         "style": 4,
-                        "custom_id": "click_one"
+                        "custom_id": "the_id_you_want"
+                        "emoji":{
+                            "name" : "the emoji name",
+                            "id": "the emoji is"
+                        }
                     }
                 ]
 
@@ -30,3 +36,4 @@ module.exports = {
     })
     }
 }
+bot.login(bot.token);
