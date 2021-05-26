@@ -1,21 +1,21 @@
 const Client = require('discord.js');
 const fetch = require('node-fetch');
-const bot = new Client(
+const bot = new Client({
     allowedMentions: { parse: [] },
     intents: new Intents(Intents.ALL)
-);
+});
 bot.prefix = ".";
 bot.token = token;
 bot.on('ready', async () => {
     bot.application.commands.create({
-        name: "button"
-      description: "example for button"
-    })
+        name: "button",
+        description: "example for button"
+    });
     const guild = bot.guilds.cache.get("the id");
     await guild.commands.create({
-        name: "button-g"
-      description: "example for button, but guild command"
-    })
+        name: "button-g",
+        description: "example for button, but guild command"
+    });
     bot.user.setActivity("stuff");
     console.on('online');
 });
@@ -33,12 +33,13 @@ bot.on('message', async (msg) => {
                         "type": 2, //buttons
                         "label": "batan", //the thing you want to display
                         "style": 4, //red
-                        "custom_id": "the_id_you_want" //the id
+                        "custom_id": "the_id_you_want", //the id
                         "emoji": { //if you want emoji
                             "name": "the emoji name",
                             "id": "the emoji is"
                         }
-                  {
+                    },
+                    {
                         "type": 2, //buttons
                         "label": "link", //the thing you want to display
                         "style": 5, //url button
@@ -56,46 +57,44 @@ bot.on('message', async (msg) => {
             "Content-Type": "application/json"
         }
     })
-}
-}
-    bot.on('interaction', async (interaction) => {
-        if (interaction.commandName == "button") {
-            bot.api.interactions(interaction.id, interaction.token).callback
-                .post({
-                    data: {
-                        type: 4,
-                        /*flags: 64*/ //for ephemeral
-                        data: {
-                            content: "buttons test",
-                            embeds: [],
-                            components: [{
-                                "type": 1, "components": [
-                                    {
-                                        "type": 2, //buttons
-                                        "label": "batan", //the thing you want to display
-                                        "style": 4, //red
-                                        "custom_id": "the_id_you_want" //the id
-                        "emoji": { //if you want emoji
-                                            "name": "the emoji name",
-                                            "id": "the emoji is"
-                                        }       //YES I COPY PASTED THIS FROM ABOVE
-                  {
-                                        "type": 2, //buttons
-                                        "label": "link", //the thing you want to display
-                                        "style": 5, //url button
-                                        "url": "the_url",
-                                        "emoji": { //if you want emoji
-                                            "name": "the emoji name",
-                                            "id": "the emoji is" //don't fill the id if you want ascii
-                                        }
-                                    }
-                                ]
-                            }]
+});
+bot.on('interaction', async (interaction) => {
+    if (interaction.commandName != "button") return;
+    bot.api.interactions(interaction.id, interaction.token).callback.post({
+        data: {
+            type: 4,
+            /*flags: 64*/ //for ephemeral
+            data: {
+                content: "buttons test",
+                embeds: [],
+                components: [{
+                    "type": 1, "components": [
+                        {
+                            "type": 2, //buttons
+                            "label": "batan", //the thing you want to display
+                            "style": 4, //red
+                            "custom_id": "the_id_you_want", //the id
+                            "emoji": { //if you want emoji
+                                "name": "the emoji name",
+                                "id": "the emoji is"
+                            }       //YES I COPY PASTED THIS FROM ABOVE
+                        },
+                        {
+                            "type": 2, //buttons
+                            "label": "link", //the thing you want to display
+                            "style": 5, //url button
+                            "url": "the_url",
+                            "emoji": { //if you want emoji
+                                "name": "the emoji name",
+                                "id": "the emoji is" //don't fill the id if you want ascii
+                            }
                         }
-                    }
-                })
+                    ]
+                }]
+            }
         }
-    });
+    })
+});
 bot.on('INTERACTION_CREATE', async (bt) => {
     if (bt.type != 3) return; //to reject the normal slash commands, since buttons are type 3
     const btn = bt.data.custom_id;
@@ -112,3 +111,4 @@ bot.on('INTERACTION_CREATE', async (bt) => {
     }
 });
 bot.login(bot.token);
+
