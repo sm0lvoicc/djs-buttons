@@ -1,4 +1,4 @@
-const Client = require('discord.js');
+const {Client, Intents} = require('discord.js');
 const fetch = require('node-fetch');
 const bot = new Client({
     allowedMentions: { parse: [] },
