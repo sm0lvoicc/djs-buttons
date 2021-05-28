@@ -4,7 +4,7 @@
   "label": "stuff you want to be displayed on the button", 
   "custom_id": "eyedee", 
   "emoji": { 
-    name: "use this for unicode", 
-    id: "only if you want an animated emoji" 
+    "name": "use this for unicode", 
+    "id": "only if you want an animated emoji" 
   }, 
 }
