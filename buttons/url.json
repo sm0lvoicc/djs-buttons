@@ -1,0 +1,10 @@
+{
+  "type": 2,
+  "style": 5, /*url*/
+  "label": "stuff",
+  "url" : "the url"
+  "emoji":{
+    "name" : "use this for unicode",
+    "id": "use this for custom emojis"
+  }
+}
