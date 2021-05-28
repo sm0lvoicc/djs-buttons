@@ -1,0 +1,10 @@
+{ 
+  "type": 2, 
+  "style": 2,/*grey*/ 
+  "label": "stuff you want to be displayed on the button", 
+  "custom_id": "eyedee", 
+  "emoji": { 
+    name: "use this for unicode", 
+    id: "only if you want an animated emoji" 
+  }, 
+}
