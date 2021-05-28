@@ -20,9 +20,9 @@ bot.on('ready', async () => {
     console.log('online');
 });
 bot.on('message', async (msg) => {
-    if (message.author.bot) return;
+    if (msg.author.bot) return;
     if (msg.content.toLowerCase() != '.batan') return;
-    fetch(`https://discord.com/api/v9/channels/${message.channel.id}/messages`, {
+    fetch(`https://discord.com/api/v9/channels/${msg.channel.id}/messages`, {
         method: "POST",
         body: JSON.stringify({
             "content": "batan",
