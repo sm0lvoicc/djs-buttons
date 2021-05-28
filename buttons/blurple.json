@@ -1,0 +1,10 @@
+{ 
+  "type": 2, 
+  "style": 1,/*blurple*/ 
+  "label": "the thingy you want to be displayed on the buttons", 
+  "custom_id": "eyedee", 
+  "emoji": { 
+    name: "same thing from the last 2 files", 
+    id: "same thing from the last 2 files" 
+  }, 
+}
