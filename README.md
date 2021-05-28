@@ -19,7 +19,7 @@ and i am using djs v13, or master branch, so do `npm install discordjs/discord.j
 ![batans](https://i.imgur.com/sd6BgY2.png)
 I have made a folder in here with the name buttons or something, i have made files for each buttons, see that for more reference  
 note:
-the `"emoji":{}` thing is not compulsary, neither is `"label":""`, and you cannot have any other colour /*style*/ with a url button, and you can disable a button with `"disable": true`  
+the `"emoji":{}` thing is not compulsary, neither is `"label":""`, and you cannot have any other colour /*style*/ with a url button, and you can disable a button with `"disabled": true`  
 ## types
 </> type 6: its like a defer thing, you click on the button and you get 15 mins to reply to it  
 ![stuff man](https://imgur.com/KngoZUt.gif)  
