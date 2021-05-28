@@ -5,7 +5,7 @@ bot.prefix = ".";
 bot.token = token;
 bot.on('ready', ()=>{
     bot.user.setActivity("stuff");
-    console.on('online');
+    console.log('online');
 });
 bot.on('message', async(msg)=>{
     if (message.author.bot) return;
