@@ -3,7 +3,7 @@ ok so, for the button_interaction i was using a handler so adjust
 ## so this is how it works:
 you first send a message recieve an interaction event (slash commands) and then you reply to them using the buttons, now... there are 5 different buttons, grey, blurple, green, red, and the url ones which are grey in colour, now, when one person clicks the button you recieve a `INTERACTION_CREATE` event, to filter this out, you can do:
 ```js
-client.ws.on('INTERACTION_CREATE', async(interaction)=>{
+client.ws.on('INTERACTION_CREATE', async(interaction)=>{ /*i my client defined as bot in the file*/
   if (interaction.type != 3) return;
   /*do whatever you want to do with buttons here*/
  });
