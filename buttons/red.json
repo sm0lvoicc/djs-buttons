@@ -4,6 +4,7 @@
   "label": "the name you want to show", 
   "custom_id": "the id", 
   "emoji": { 
-    name: "use only name if you want to use unicode emoji", 
-    id: "id" },
+    "name": "use only name if you want to use unicode emoji", 
+    "id": "id" 
+  },
 }
