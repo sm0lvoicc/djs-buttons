@@ -17,7 +17,7 @@ bot.on('ready', async () => {
         description: "example for button, but guild command"
     });
     bot.user.setActivity("stuff");
-    console.on('online');
+    console.log('online');
 });
 bot.on('message', async (msg) => {
     if (message.author.bot) return;
