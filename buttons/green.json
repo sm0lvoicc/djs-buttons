@@ -1,0 +1,10 @@
+{ 
+  "type": 2, 
+  "style": 3, /*green*/
+  "label": "the name you want to show", 
+  "custom_id": "the id", 
+  "emoji": { 
+    name: "use only name if you want to use a unicode emoji", 
+    id: "use this if you want to use animated emoji or custom emoji" 
+  }, 
+}
